@@ -1,16 +1,16 @@
 # whatever-idle
 
 
-<h1>Generic Purpose</h1>
+#Generic Purpose
 What I'm trying to test/practice in this project is decoupling data and fast deployment.
 I'm getting my fast deployment through use of scriptable objects (I tend to just label them as "SO" from here out). 
 I'm attempting to decouple by using events to broadcast and subscribe key events.
   Currently two key events in my mind:
-      <b>*A resource is produced</b>
-      <b>*Time has passed</b>
+      * **A resource is produced**
+      * **Time has passed**
 
 
-<h1>Time Related Part of the Project</h1>
+#Time Related Part of the Project
 There's a Timer UI class subscribing for a change in seconds to update a timer in the UI - currently just for testing and visual reference.
 https://github.com/laodecia/whatever-idle/blob/35f093c84bb1b0c3e3f9a66ce732e29dc79de811/Whatever/Assets/Scripts/TimerUI.cs
 
