@@ -9,6 +9,7 @@ public class Resource : ScriptableObject
     [SerializeField] double resourceValue;
     [SerializeField] double resourceAmount;
 
+    public string ResourceName { get => resourceName; }
     public double ResourceAmount { get => resourceAmount; set => resourceAmount = value; }
 
    

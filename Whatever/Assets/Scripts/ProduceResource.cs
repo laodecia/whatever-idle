@@ -26,6 +26,8 @@ public class ProduceResource : MonoBehaviour
     ///I want to broadcast (what I usually call invoke) a resource was made
     
 
+
+    //Implement a slider to represent production time
     void Produce()
     {
         
@@ -80,7 +82,7 @@ public class ProduceResource : MonoBehaviour
 
     private void LoadProducerUIInfo()
     {
-        buttonNameTMP.text = producer.ProducerName;
+        buttonNameTMP.text = resource.ResourceName + " " + producer.ProducerName;
         producedTMP.text = "Produced: " + producer.BaseAmountProduced;
         multiplierTMP.text = "Multiplier: " + producer.BaseMultiplier;
         costTMP.text = "Cost: " + producer.BaseCost;
