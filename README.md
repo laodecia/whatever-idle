@@ -37,21 +37,21 @@ There are two Scriptable objects set up to the production of a resource.
 ### Producer SO - Used to create base stats about production
 https://github.com/laodecia/whatever-idle/blob/35f093c84bb1b0c3e3f9a66ce732e29dc79de811/Whatever/Assets/Scripts/SOs/Producer.cs
 * Right clicking in the editor under the Scriptable Objects Folder
-** Create > New Scriptable Object > Create New Producer Type
+  * Create > New Scriptable Object > Create New Producer Type
       
 ### Resource SO - Used to deploy a new type of resource and to pass what resource a producer would make
 https://github.com/laodecia/whatever-idle/blob/35f093c84bb1b0c3e3f9a66ce732e29dc79de811/Whatever/Assets/Scripts/SOs/Resource.cs
 * Right clicking in the editor under the Scriptable Objects Folder
-** Create > New Scriptable Object > Create New Resource Type
+  * Create > New Scriptable Object > Create New Resource Type
       
       
 ## Produce Resource class:
 https://github.com/laodecia/whatever-idle/blob/35f093c84bb1b0c3e3f9a66ce732e29dc79de811/Whatever/Assets/Scripts/ProduceResource.cs
-Pulls in a Resource SO and a Produce SO
-Subscribes to when a second has passed from the time manager
-Every second calls the produce method that increments a local time and checks against the production time sourced from the SO
-Once something is produced a new event that something has been produced is broadcast.
-And some amount is added to the resource being produced
+* Pulls in a Resource SO and a Produce SO
+* Subscribes to when a second has passed from the time manager
+* Every second calls the produce method that increments a local time and checks against the production time sourced from the SO
+* Once something is produced a new event that something has been produced is broadcast.
+* And some amount is added to the resource being produced
 
 
 There's a simple prefab, ProducerGO, that at the parent level has a Produce Resource Script.
@@ -59,8 +59,8 @@ The button is unnecessary at the moment but will eventually be to purchase the p
 So to deploy a new production:
 * Drop a "ProducerGO" prefab into the Scene > Canvas > Mid Display 
   * At the parent level of ProducerGo:
-   1. Add a SO Resource Type to the Produce Resource Script
-   2. Add a SO Producer Type to the Produce Resource Script
+    * Add a SO Resource Type to the Produce Resource Script
+    * Add a SO Producer Type to the Produce Resource Script
  
 
 
