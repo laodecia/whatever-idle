@@ -1,16 +1,17 @@
 # whatever-idle
 
 
-#Generic Purpose
-What I'm trying to test/practice in this project is decoupling data and fast deployment.
-I'm getting my fast deployment through use of scriptable objects (I tend to just label them as "SO" from here out). 
-I'm attempting to decouple by using events to broadcast and subscribe key events.
-  Currently two key events in my mind:
-      * **A resource is produced**
-      * **Time has passed**
+# Generic Purpose
+What I'm trying to test/practice in this project is decoupling data and fast deployment. I'm getting my fast deployment through use of scriptable objects (I tend to just label them as "SO" from here out). I'm attempting to decouple by using events to broadcast and subscribe key events.
+
+Currently two key events in my mind:
+* A resource is produced
+* Time has passed
 
 
-#Time Related Part of the Project
+
+
+# Time Related Part of the Project
 There's a Timer UI class subscribing for a change in seconds to update a timer in the UI - currently just for testing and visual reference.
 https://github.com/laodecia/whatever-idle/blob/35f093c84bb1b0c3e3f9a66ce732e29dc79de811/Whatever/Assets/Scripts/TimerUI.cs
 
@@ -30,21 +31,21 @@ If I wanted to halt time I could just change my time scale to 0 and all producti
 
 
 
-<h1>Production Related Part of the Project</h1>
+# Production Related Part of the Project
 There are two Scriptable objects set up to the production of a resource.
 
-Producer SO - Used to create base stats about production
+### Producer SO - Used to create base stats about production
 https://github.com/laodecia/whatever-idle/blob/35f093c84bb1b0c3e3f9a66ce732e29dc79de811/Whatever/Assets/Scripts/SOs/Producer.cs
-Right clicking in the editor under the Scriptable Objects Folder
-      Create > New Scriptable Object > Create New Producer Type
+* Right clicking in the editor under the Scriptable Objects Folder
+** Create > New Scriptable Object > Create New Producer Type
       
-Resource SO - Used to deploy a new type of resource and to pass what resource a producer would make
+### Resource SO - Used to deploy a new type of resource and to pass what resource a producer would make
 https://github.com/laodecia/whatever-idle/blob/35f093c84bb1b0c3e3f9a66ce732e29dc79de811/Whatever/Assets/Scripts/SOs/Resource.cs
-Right clicking in the editor under the Scriptable Objects Folder
-      Create > New Scriptable Object > Create New Resource Type
+* Right clicking in the editor under the Scriptable Objects Folder
+** Create > New Scriptable Object > Create New Resource Type
       
       
-Produce Resource class:
+## Produce Resource class:
 https://github.com/laodecia/whatever-idle/blob/35f093c84bb1b0c3e3f9a66ce732e29dc79de811/Whatever/Assets/Scripts/ProduceResource.cs
 Pulls in a Resource SO and a Produce SO
 Subscribes to when a second has passed from the time manager
@@ -56,11 +57,11 @@ And some amount is added to the resource being produced
 There's a simple prefab, ProducerGO, that at the parent level has a Produce Resource Script.
 The button is unnecessary at the moment but will eventually be to purchase the producer - it also has a call to a Produce method in Produce Resource.
 So to deploy a new production:
-  Drop a "ProducerGO" prefab into the Scene > Canvas > Mid Display 
-  At the parent level of ProducerGo:
-    Add a SO Resource Type to the Produce Resource Script
-    Add a SO Producer Type to the Produce Resource Script
-    
+* Drop a "ProducerGO" prefab into the Scene > Canvas > Mid Display 
+  * At the parent level of ProducerGo:
+   1. Add a SO Resource Type to the Produce Resource Script
+   2. Add a SO Producer Type to the Produce Resource Script
+ 
 
 
 Normally I wouldn't have long comment sections, but I wanted to kind of write out some thoughts of what I wanted to do, or why I was doing it, or where I might be heading with it. I'll cover those in the actual review.
