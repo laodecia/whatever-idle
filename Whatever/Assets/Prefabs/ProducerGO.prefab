@@ -548,12 +548,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resource: {fileID: 0}
-  producerName: Producer Name
-  amountProduced: 1
-  multiplier: 1
-  cost: 10
-  speed: 1
-  buttonNameTMP: {fileID: 0}
+  producer: {fileID: 0}
+  localTime: 0
+  buttonNameTMP: {fileID: 3960919998896200388}
   producedTMP: {fileID: 3960919998773333928}
   multiplierTMP: {fileID: 3960919997678018666}
   costTMP: {fileID: 3960919997752983952}

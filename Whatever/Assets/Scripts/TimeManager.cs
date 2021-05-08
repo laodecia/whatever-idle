@@ -54,7 +54,10 @@ public class TimeManager : MonoBehaviour
             }
             OneSecondChanged?.Invoke();
                         
-            timer = TimeScale;
+            //revist
+            //without + timer, i'm missing out on time that might have been beyond the time.
+            //like there could have been an extra .4F out there that i'm not accounting for.
+            timer = TimeScale + timer;
         }
     }
 }

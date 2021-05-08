@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6faa34d085f32094cb7e46a828b32dbb, type: 3}
-  m_Name: Diamond
+  m_Script: {fileID: 11500000, guid: 6cc711ed345d53e45a453c674f97dce1, type: 3}
+  m_Name: Metal
   m_EditorClassIdentifier: 
-  resourceName: Diamond
-  resourceValue: 1
-  resourceAmount: 0
+  producerName: Factory
+  baseCost: 10
+  baseAmountProduced: 10
+  baseMultiplier: 1
+  baseProductionTime: 10

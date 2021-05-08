@@ -14,8 +14,8 @@ public class ProduceResource : MonoBehaviour
 
     public static Action SomethingWasProduced;
 
-    private void OnEnable() {TimeManager.OneSecondChanged += Produce; }
-    private void OnDisable() {TimeManager.OneSecondChanged -= Produce; }
+    private void OnEnable() { TimeManager.OneSecondChanged += Produce; }
+    private void OnDisable() { TimeManager.OneSecondChanged -= Produce; }
 
     ///How do i make the production card modular?
     ///it would need to take in a resource to make
@@ -24,31 +24,30 @@ public class ProduceResource : MonoBehaviour
     ///I don't want to load a prefab into scene and then define variables in inspector
     ///I want to drop two so's onto a prefab -the resource to make -the production style
     ///I want to broadcast (what I usually call invoke) a resource was made
-    
+
 
 
     //Implement a slider to represent production time
     void Produce()
     {
-        
-            localTime++;
+        localTime++;
 
-            if (localTime < producer.BaseProductionTime + 1)
-            {
-                Debug.Log("Local Time Passed: " + localTime + " seconds.");
+        if (localTime <= producer.BaseProductionTime)
+        {
+            Debug.Log("Local Time Passed: " + localTime + " seconds " + resource.ResourceName + "created");
 
             if (localTime >= producer.BaseProductionTime)
             {
                 Debug.Log("Produced: " + producer.BaseAmountProduced + " " + resource.name);
-                resource.ResourceAmount += producer.BaseAmountProduced;
+
                 localTime = 0;
                 SomethingWasProduced?.Invoke();
             }
 
-        }
-         
-
     }
+
+
+}
     ///Something has been produced, the resource label is updated
     ///How do I get what was produced and how much was produced to pass along
     ///I'm trying to avoid passing that value into another script
@@ -73,7 +72,7 @@ public class ProduceResource : MonoBehaviour
     [SerializeField] TextMeshProUGUI multiplierTMP;
     [SerializeField] TextMeshProUGUI costTMP;
     [SerializeField] TextMeshProUGUI speedTMP;
-   
+
 
     void Start()
     {
@@ -88,5 +87,6 @@ public class ProduceResource : MonoBehaviour
         costTMP.text = "Cost: " + producer.BaseCost;
         speedTMP.text = "Speed: " + producer.BaseProductionTime;
     }
+
 }
 
